@@ -7,148 +7,423 @@
     <link rel="icon" type="image/x-icon" href="/projects/project-1/images/favicon.png">
 
     <style>
+        @import url(https://fonts.bunny.net/css?family=cabin:400,400i,500,500i,600,600i,700,700i|cabin-condensed:400,500,600,700|encode-sans:100,200,300,400,500,600,700,800,900|encode-sans-condensed:100,200,300,400,500,600,700,800,900);
+        *{
+            padding: 0;
+            margin: 0;
+            
+        }
         body{
-            margin: 0px;
-            color:white;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: white;
+            font-family: 'Encode Sans Condensed', Verdana, sans-serif;
+        }
+        main{
+            background-color: white;
+            min-width: fit-content;
         }
         a{
             text-decoration: none;
         }
-        a.headerlink{
-            float: right;
-        }
         header{
+            display: flex;
             background-color: #2B2D63;
             width: 100%;
             height: 100px;
             margin-top: 0px;
         }
+        #headertext{
+            display: flex;
+            justify-content: left;
+            align-items: left;
+            
+            padding-left: 25px;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            align-items: right;
+            padding-right: 50px;
+        }
+        nav ul {
+            padding: 0;
+            margin: 0;
+            margin-left: 100px;
+            display: flex;
+            justify-content: right;
+            align-items: right;
+        }
+        nav li {
+            list-style: none;
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+        nav li a{
+            color: white;
+        }
+        nav li a:visited{
+            color: white;
+        }
+        nav li a:hover{
+            color: #FFD37D;
+        }
+        nav li a:active{
+            color: #DF3B45;
+        }
+        #hero{
+            width: auto;
+            height: 400px;
+            background-image: url(/projects/project-1/images/paAutumn.webp);
+            border-bottom: 35px solid #FFD37D;
+            background-size: cover;
+        }
+        #tagline{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-shadow: 1px 1px 7px black;
+        }
+        #tagline-Part1{
+            font-family: "Cabin Condensed", sans-serif;
+            padding-top: 75px;
+            font-size: 160px;
+            font-kerning: auto;
+            letter-spacing: 5px;
+        }
+        #tagline-Part2{
+            font-family: "Encode Sans", sans-serif;
+            margin-top: -30px;
+            font-size: 36px;
+        }
         .logo{
-            height: 50px;
+            height: 75px;
+            padding: .75em;
+        }
+        p{
+            font-family: "Encode Sans", sans-serif;
+            padding-bottom: 1em;
         }
         h1{
             font-size: 40px;
         }
         h2{
-            font-size: 40px;
+            font-size: 48px;
+            margin-top: 18px;
+            margin-left: 5px;
         }
         h3{
-            position: absolute;
-            float: right;
+            font-size: 24px;
         }
-        .line{
-            background-color: #FFD37D;
-            height: 65px;
-            width: auto;
+        #attractions{
+            color: #475894;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+        #sitelist{
+            margin: 25px;
         }
         .location{
-            background-color: #2B2D63;
-            width: 100px;
-            min-height: 100px;
-            margin: 10px;
-        }
-        .location.A{
-            background-color: #2B2D63;
-        }
-        .location.B{
-            background-color: #2B6063;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            min-width: 1020px;
         }
         .sitename{
-            background-color: teal;
-            width: 150px;
-            height: 25px;
+            background-image: url("images/sitename.svg");
+            background-size: cover;
+            height: 50px;
+            width: 400px;
+            padding: 10px 10px 10px 25px;
+            margin-top: 10px;
+            font-size: 26px;
+            display: flex;
+            align-items: center;
         }
         .sitecontent{
+            background-image: url("images/sitecontent.svg");
+            background-size:cover;
+            height: 210px;
+            width: 400px;
             margin-top: 10px;
-            background-color: teal;
-            width: 250px;
-            min-height: 200px;
+            padding: 25px;
+            padding-right: 100px;
+            margin-right: 10px;
+            
         }
+        .paragraphBox{
+            font-size: 18px;
+            padding-right: 30px;
+        }
+        .alternate .sitename{
+            background-image: url("images/sitename-alt.svg");
+        }
+        .alternate .sitecontent{
+            background-image: url("images/sitecontent-alt.svg");
+        }
+        .location img{
+            height: 500px;
+            width: 500px;
+            box-shadow: -2px -2px 5px gray;
+            margin-left: 18px;
+            margin-bottom: 10px;
+        }
+        
         .sitelink{
             background-color: #FFD37D;
+            color: #2B2D63;
+            padding: 5px 10px;
+            width: fit-content;
+            margin: 10px;
+            border: none;
+            font-family: 'Cabin Condensed', sans-serif;
+            font-size: 20px;
+            border-radius: 0px 25px 25px 25px;
         }
-        button{
+        .sitelink:hover{
+            background-color: #E0E7F1;
+        }
+        .sitelink:active{
+            background-color: #FFD37D;
+        }
+        #bookButton{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+        #bookButton button{
             background-color: #DF3B45;
             color: white;
-            width: 250px;
-            height: 100px;
+            width: 275px;
+            height: 50px;
             border: none;
+            font-family: 'Encode Sans Condensed', sans-serif;
+            font-size: 24px;
         }
-        .trapezoid {
-            width: 200px;
-            height: 100px;
-            background: #2B2D63;
-            transform: perspective(10px) rotateX(-5deg);
-            position: absolute;
-            left: 50%;
-            float: bottom;
+        #bookButton button:hover{
+            background-color:#ff545f;
+        }
+        #bookButton button:active{
+            background-color:#FFD37D;
         }
         footer{
-            background-color: #2B2D63;
             width: auto;
+            height: auto;
+        }
+        #trapezoidContainer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #trapezoid {
+            background-image: url(/projects/project-1/images/footer.svg);
+            background-size: cover;
+            width: 500px;
+            height: 85px;
+            position: relative;
+            top: 50px;
+        }
+        #footerbanner{
+            background-color: #2B2D63;
+            color: #E0E7F1;
+            font-size: 10px;
             height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-top: 35px solid #FFD37D;
+            align-self: flex-end;
+        }
+        #socialmedia img{
+            width: 30px;
+            padding: 8px;
+            padding-bottom: 15px;
         }
         
     </style>
 </head>
 <body>
+<main>
     <header>
-        <div class="logo"><img src="/projects/project-1/images/DestinationPA_Logo.png" alt="Destination PA"/></div>
-        <h1>DESTINATION PA</h1>
-        <h3><a class="headerlink" href="Home"></a></h3>
-        <h3 style="color: #475894">Attractions</h3>
-        <h3>About</h3>
+        <div id="headertext">
+            <div><img class="logo" src="/projects/project-1/images/DestinationPA_Logo.png" alt="Destination PA"/></div>
+            <h2 style="width: 400px;">DESTINATION PA</h2>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Attractions</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
      </header>
-     <img src="https://placekitten.com/1500/600" alt="awww" />
-     <div style="background-color: #FFD37D"></div>
+     <div id="hero">
+        <!--<img style="border-bottom: 50px solid #FFD37D" src="https://placekitten.com/1500/600" alt="awww" />-->
+        
+        <div id="tagline">
+            <h1 id="tagline-Part1">EXPLORE</h1>
+            <p id="tagline-Part2">the Keystone State</p>
+        </div>
+     </div>
+     
+    <h2 id="attractions">ATTRACTIONS</h2>
 
-    <h2>ATTRACTIONS</h2>
-    <div class="location">1
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">A renowned amusement park featuring exciting 
-            rides, live entertainment, and an opportunity to learn about 
-            chocolate-making at Hershey's Chocolate World.</div>
-    </div>
-    <div class="location">2
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Numquam quis ipsa quaerat dignissimos dolor 
-            recusandae voluptatibus maxime nemo nobis ducimus possimus, 
-            totam cun. Obcaecati, harum.</div>
-    </div>
-    <div class="location">3
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Numquam quis ipsa quaerat dignissimos dolor 
-            recusandae voluptatibus maxime nemo nobis ducimus possimus, 
-            totam cun. Obcaecati, harum.</div>
-    </div>
-    <div class="location">4
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Numquam quis ipsa quaerat dignissimos dolor 
-            recusandae voluptatibus maxime nemo nobis ducimus possimus, 
-            totam cun. Obcaecati, harum.</div>
-    </div>
-    <div class="location">5
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Numquam quis ipsa quaerat dignissimos dolor 
-            recusandae voluptatibus maxime nemo nobis ducimus possimus, 
-            totam cun. Obcaecati, harum.</div>
-    </div>
-    <div class="location">6
-        <div class="sitename">Hershey Park</div>
-        <div class="sitecontent">Lorem ipsum dolor sit, amet consectetur 
-            adipisicing elit. Numquam quis ipsa quaerat dignissimos dolor 
-            recusandae voluptatibus maxime nemo nobis ducimus possimus, 
-            totam cun. Obcaecati, harum.</div>
+    <div id="sitelist">
+        <!--Card-->
+        <div class="location">
+            <img src="/projects/project-1/images/hersheyPark.jpg" alt="Hersheypark">
+            <div>
+                <div class="sitename"><h4>Hersheypark</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>A renowned amusement park featuring exciting rides, live 
+                                entertainment, and an opportunity to learn about 
+                                chocolate-making at Hershey's Chocolate World. 
+                            </p>
+                            <p>It is the largest amusement park in the state of Pennsylvania, 
+                                offering thrilling roller coasters, family attractions, and an 11-acre water park.</p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='https://www.hersheypark.com';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!--Card-->
+        <div class="location alternate">
+            <img src="/projects/project-1/images/gettysburgPark.jpg" alt="Gettysburg national Military Park">
+            <div>
+                <div class="sitename"><h4>Gettysburg National Military Park</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>Site of the pivotal Battle of Gettysburg during the 
+                                Civil War, offering guided tours, historic monuments, 
+                                and a visitor center with exhibits. 
+                            </p>
+                            <p>It was this momentous battle that inspired President Abraham 
+                                Lincoln's immortal "Gettysburg Address".</p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='https://www.nps.gov/gett';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!--Card-->
+        <div class="location">
+            <img src="/projects/project-1/images/paCapitol.jpg" alt="PA State Capitol">
+            <div>
+                <div class="sitename"><h4>Pennsylvania State Capitol</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>An impressive architectural gem in the city of Harrisburg showcasing exquisite 
+                                artwork, stunning interiors, and guided tours to learn about the 
+                                state's government and history. 
+                            </p>
+                            <p>
+                                Built and furnished at a cost of $13 million, the PA Capitol features paintings, 
+                                stained glass, and furnishings by some of the best artisans of the day.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='http://www.pacapitol.com/';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!--Card-->
+        <div class="location alternate">
+            <img src="/projects/project-1/images/pineGroveFurnace.jpg" alt="Pine Grove Furnace State Park">
+            <div>
+                <div class="sitename"><h4>Pine Grove Furnace State Park</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>Serving as "Gateway to the Appalachian Trail," 
+                                this park offers hiking, picnicking, and swimming 
+                                opportunities, along with historic features and 
+                                natural beauty. 
+                            </p>
+                            <p>
+                                The Appalachian Trail Museum Festival is held every June, featuring 
+                                a banquet, hikes, guest speakers, music, and children's programs.
+                            </p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='https://www.dcnr.pa.gov/StateParks/FindAPark/PineGroveFurnaceStatePark/Pages/default.aspx';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!--Card-->
+        <div class="location">
+            <img src="/projects/project-1/images/worldsEndPark.jpg" alt="Worlds End State Park">
+            <div>
+                <div class="sitename"><h4>Worlds End State Park</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>Situated in the Endless Mountains, this park is known 
+                                for its rugged beauty, with hiking trails, waterfalls, 
+                                and breathtaking views of the Loyalsock Creek Gorge. 
+                            </p>
+                            <p>Scenery is particularly unforgettable during the June 
+                                mountain laurel bloom and the fall foliage period in October.</p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='https://www.dcnr.pa.gov/StateParks/FindAPark/WorldsEndStatePark/Pages/default.aspx';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!--Card-->
+        <div class="location alternate">
+            <img src="/projects/project-1/images/paCanyon.jpg" alt="PA Grand Canyon">
+            <div>
+                <div class="sitename"><h4>The Pennsylvania Grand Canyon</h4></div>
+                    <div class="sitecontent">
+                        <div class="paragraphBox">
+                            <p>Also known as Pine Creek Gorge, this natural wonder 
+                                features stunning vistas, hiking trails, and 
+                                opportunities for outdoor recreation. 
+                            </p>
+                            <p>An environmental educator presents resource-oriented 
+                                programs and nature walks April through October.</p>
+                        </div>
+                    </div>
+                    <button class="sitelink" onclick="window.location.href='https://www.dcnr.pa.gov/StateParks/FindAPark/ColtonPointStatePark/Pages/default.aspx';"><center><h4>Visit Website</h4></center></button>
+            </div>
+        </div>
+        <!--Card-->
+
+        <!-- Note: I added some copy from each locations' respective websites to fill the space. -->
     </div>
     
-    <button>BOOK YOUR TRIP NOW</button>
-    <div class="trapezoid"></div>
-    <footer>© Copyright 2023 Destination Pennsylvania. All rights reserved.</footer>
+    <div id="bookButton">
+        <button><h3>BOOK YOUR TRIP NOW</h3></button>
+    </div>
     
+    <footer>
+        <div id="trapezoidContainer">
+            <div id="trapezoid"></div>
+        </div>
+        <div id="footerbanner">
+            <div id="socialmedia">
+                <img src="images/brand-facebook-basic_2.svg" alt="Facebook">
+                <img src="images/brand-instagram-basic.svg" alt="Instagram">
+                <img src="images/x-logo.svg" alt="X">
+                <img src="images/brand-pinterest-basic.svg" alt="Pinterest">
+            </div>
+            
+            <p>© Copyright 2023 Destination Pennsylvania. All rights reserved.</p>
+        </div>
+    </footer>
+</main>    
 </body>
 </html>

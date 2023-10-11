@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turkey Dog</title>
+    <link rel="icon" type="image/x-icon" href="favicons/fav16.jpg">
+    <link rel="apple-touch-icon" href="favicons/fav32.jpg" />
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        :root{
+            --header-width: 100px
+        }
+        header{
+            background-color: red;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        header #logo{
+            width: var(--header-width);
+            height: 50px;
+            margin: 15px;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+        .text{
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        p{
+            max-width: 360px;
+            margin-top: 10px;
+        }
+        img{
+            max-width: 400px;
+            margin-top: 10px;
+        }
+        footer{
+            height: 50px;
+            width: 100%;
+        }
+
+        @media screen and (max-width:800px){
+            header{
+            background-color: orange;
+            }
+            main{
+            flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img id="logo" src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
+        <h1>turkeydog.org</h1>
+    </header>
+
+    <main>
+        <img src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
+        <div class="text">
+            <h2>Turkey Dog</h2>
+            <p>
+                Behold the glorious being known as Turkey Dog. 
+                Most festive of all creatures. Most based of all 
+                memes. Conqueror of cringe. 
+            </p>
+            <p>
+                Born a dog and raised by wild turkeys, Turkey Dog
+                traveled the world in search of meaning. Is he a 
+                turkey or a dog? Who's to say? Turkey Dog didn't 
+                know the answer. He traversed mountains and valleys 
+                seeking answers and querying wise sages from all over. 
+                But their answers made no sense to Turkey Dog, so 
+                he continued searching. He fought huge monsters and 
+                powerful aliens, but these challenges were too easy 
+                for him. 
+            </p>
+            <p>
+                Then, he found his true calling: correcting 
+                idiotic takes on the internet. Convincing people on 
+                the web that they're wrong? Now that was a challenge 
+                worthy of the great Turkey Dog. 
+            </p>
+        </div>
+    </main>
+    <footer></footer>
+    
+</body>
+</html>

@@ -17,13 +17,35 @@
             --header-width: 100px
         }
         header{
-            background-color: red;
+            background-color: coral;
             display: flex;
             flex-direction: row;
-            justify-content: center;
             align-items: center;
         }
+        #title{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+        }
+        nav{
+            width: 100%;
+            display: flex;
+            justify-content: right;
+        }
+        nav ul{
+            display: flex;
+            flex-direction: row;
+            list-style-type: none;
+            text-decoration: none;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding-right: 25px;
+        }
+        
         header #logo{
+            /* Yes, it's supposed to look like that **/
             width: var(--header-width);
             height: 50px;
             margin: 15px;
@@ -37,6 +59,9 @@
         .text{
             margin-left: 10px;
             margin-top: 10px;
+        }
+        h2{
+            font-size: 28px;
         }
         p{
             max-width: 360px;
@@ -54,17 +79,39 @@
         @media screen and (max-width:800px){
             header{
             background-color: orange;
+            flex-direction: column;
+            }
+            #title{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
             }
             main{
             flex-direction: column;
+            }
+            nav{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-bottom: 25px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img id="logo" src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
-        <h1>turkeydog.org</h1>
+        <div id="title">
+            <img id="logo" src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
+            <h1>turkeydog.org</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Donate</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>

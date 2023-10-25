@@ -1,161 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Turkey Dog</title>
-    <link rel="icon" type="image/x-icon" href="favicons/fav16.jpg">
+    <link rel="icon" type="image/x-icon" href="favicons/fav16.jpg" />
     <link rel="apple-touch-icon" href="favicons/fav32.jpg" />
 
     <style>
-        *{
-            padding: 0;
-            margin: 0;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        :root{
-            --header-width: 100px
-        }
-        header{
-            background-color: coral;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            width: 100%;
-        }
-        #title{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-        }
-        nav{
-            width: 100%;
-            display: flex;
-            justify-content: right;
-        }
-        nav ul{
-            display: flex;
-            flex-direction: row;
-            list-style-type: none;
-            text-decoration: none;
-        }
-        nav ul li a{
-            text-decoration: none;
-            padding-right: 25px;
-        }
-        
-        header #logo{
-            /* Yes, it's supposed to look like that **/
-            width: var(--header-width);
-            height: 50px;
-            margin: 15px;
-        }
-        main{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 25px;
-        }
-        #about{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color:blanchedalmond;
-            padding: 25px;
-            width: fit-content;
-            border-radius: 25px;
-        }
-        .text{
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-        h2{
-            font-size: 28px;
-        }
-        p{
-            max-width: 330px;
-            margin-top: 10px;
-        }
-        img{
-            max-width: 400px;
-            border-radius: 10px;
-        }
-        footer{
-            height: 50px;
-            width: 100%;
-        }
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+      :root {
+        --header-width: 100px;
+      }
+      header {
+        background-color: coral;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 10%;
+      }
+      #title {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
 
-        @media screen and (max-width:800px){
-            header{
-            background-color: orange;
-            flex-direction: column;
-            }
-            #title{
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-            }
-            #about{
-            flex-direction: column;
-            }
-            nav{
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding-bottom: 25px;
-            }
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        list-style-type: none;
+        text-decoration: none;
+      }
+      nav ul li {
+        display: inline-block;
+      }
+      nav ul li a {
+        text-decoration: none;
+        border: 2px solid white;
+        border-radius: 5px;
+        color: white;
+        padding: 10px;
+        margin: 5px;
+      }
+      nav ul li a:hover {
+        text-decoration: none;
+        border: 2px solid white;
+        border-radius: 5px;
+        background-color: white;
+        color: coral;
+      }
+
+      header #logo {
+        /* Yes, it's supposed to look like that **/
+        width: var(--header-width);
+        height: 50px;
+        margin: 15px;
+      }
+      main {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 25px;
+      }
+      #about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: blanchedalmond;
+        padding: 25px;
+        width: fit-content;
+        border-radius: 25px;
+      }
+      .text {
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+      h2 {
+        font-size: 28px;
+      }
+      p {
+        max-width: 330px;
+        margin-top: 10px;
+      }
+      img {
+        max-width: 400px;
+        border-radius: 10px;
+      }
+      footer {
+        height: 50px;
+        width: 100%;
+      }
+      #toggle-nav {
+        position: absolute;
+        right: 1em;
+        top: 1em;
+      }
+
+      @media screen and (max-width: 800px) {
+        body.nav-open #primary-nav {
+          grid-template-rows: 1fr;
         }
+        #primary-nav {
+          display: grid;
+          grid-template-rows: 0fr;
+          transition: grid-template-rows 0.5s ease-out;
+        }
+        .inner {
+          overflow: hidden;
+        }
+        #toggle-nav {
+          display: block;
+        }
+        header {
+          background-color: orange;
+          flex-direction: column;
+          height: fit-content;
+        }
+        #title {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        #about {
+          flex-direction: column;
+        }
+        nav li {
+          display: block;
+          justify-content: center;
+        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div id="title">
-            <img id="logo" src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
-            <h1>turkeydog.org</h1>
+      <div id="title">
+        <img
+          id="logo"
+          src="/exercises/practice/turkeydog.jpg"
+          alt="Turkey Dog"
+        />
+        <h1>turkeydog.org</h1>
+      </div>
+      <button id="toggle-nav" href="#">&#9776</button>
+      <nav id="primary-nav" role="navigation">
+        <div class="inner">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Donate</a></li>
+          </ul>
         </div>
-        <nav>
-            <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Donate</a></li>
-            </ul>
-        </nav>
+      </nav>
     </header>
 
     <main>
-        <div id="about">
-            <img src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog">
+      <div id="about">
+        <img src="/exercises/practice/turkeydog.jpg" alt="Turkey Dog" />
         <div class="text">
-            <h2>Turkey Dog</h2>
-            <p>
-                Behold the glorious being known as Turkey Dog. 
-                Most festive of all creatures. Most based of all 
-                memes. Conqueror of cringe. 
-            </p>
-            <p>
-                Born a dog and raised by wild turkeys, Turkey Dog
-                traveled the world in search of meaning. Is he a 
-                turkey or a dog? Who's to say? Turkey Dog didn't 
-                know the answer. He traversed mountains and valleys 
-                seeking answers and querying wise sages from all over. 
-                But their answers made no sense to Turkey Dog, so 
-                he continued searching. He fought huge monsters and 
-                powerful aliens, but these challenges were too easy 
-                for him. 
-            </p>
-            <p>
-                Then, he found his true calling: correcting 
-                idiotic takes on the internet. Convincing people on 
-                the web that they're wrong? Now that was a challenge 
-                worthy of the great Turkey Dog. 
-            </p>
+          <h2>Turkey Dog</h2>
+          <p>
+            Behold the glorious being known as Turkey Dog. Most festive of all
+            creatures. Most based of all memes. Conqueror of cringe.
+          </p>
+          <p>
+            Born a dog and raised by wild turkeys, Turkey Dog traveled the world
+            in search of meaning. Is he a turkey or a dog? Who's to say? Turkey
+            Dog didn't know the answer. He traversed mountains and valleys
+            seeking answers and querying wise sages from all over. But their
+            answers made no sense to Turkey Dog, so he continued searching. He
+            fought huge monsters and powerful aliens, but these challenges were
+            too easy for him.
+          </p>
+          <p>
+            Then, he found his true calling: correcting idiotic takes on the
+            internet. Convincing people on the web that they're wrong? Now that
+            was a challenge worthy of the great Turkey Dog.
+          </p>
         </div>
-        </div>
+      </div>
     </main>
+    <script>
+        window.onload= () => {
+      const toggleNav = document.getElementById("toggle-nav");
+      toggleNav.innerHTML = "&#9776;";
+
+      toggleNav.addEventListener("click", () => {
+        document.body.classList.toggle("nav-open");
+        toggleNav.innerHTML = document.body.classList.contains('nav-open')
+        ? '&#x2715'
+        : '&#9776;';
+      });
+    };
+    </script>
+
     <footer></footer>
-    
-</body>
+  </body>
 </html>

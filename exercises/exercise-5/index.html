@@ -98,12 +98,34 @@
         width: 100%;
       }
       #toggle-nav {
+        display: none;
         position: absolute;
         right: 1em;
         top: 1em;
       }
+      nav{
+        position:absolute;
+        right: 1em;
+      }
 
       @media screen and (max-width: 800px) {
+        header {
+          background-color: orange;
+          flex-direction: column;
+        }
+        #title {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        #about {
+          flex-direction: column;
+        }
+        nav{
+            position: relative;
+        }
+
         body.nav-open #primary-nav {
           grid-template-rows: 1fr;
         }
@@ -118,24 +140,11 @@
         #toggle-nav {
           display: block;
         }
-        header {
-          background-color: orange;
-          flex-direction: column;
-          height: fit-content;
-        }
-        #title {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-        }
-        #about {
-          flex-direction: column;
-        }
-        nav li {
+        #primary-nav li {
           display: block;
-          justify-content: center;
         }
+        
+        
       }
     </style>
   </head>
@@ -149,7 +158,7 @@
         />
         <h1>turkeydog.org</h1>
       </div>
-      <button id="toggle-nav" href="#">&#9776</button>
+      <button id="toggle-nav" href="#">&#9776;</button>
       <nav id="primary-nav" role="navigation">
         <div class="inner">
           <ul>
@@ -188,18 +197,22 @@
       </div>
     </main>
     <script>
-        window.onload= () => {
-      const toggleNav = document.getElementById("toggle-nav");
-      toggleNav.innerHTML = "&#9776;";
-
-      toggleNav.addEventListener("click", () => {
-        document.body.classList.toggle("nav-open");
-        toggleNav.innerHTML = document.body.classList.contains('nav-open')
-        ? '&#x2715'
-        : '&#9776;';
-      });
-    };
-    </script>
+        // Perform this after the window has loaded
+        window.onload = () => {
+          // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+          const toggleNav = document.getElementById('toggle-nav');
+          toggleNav.innerHTML = '&#9776;';
+  
+          // Tell button to do something on click
+          toggleNav.addEventListener('click', () => {
+            // toggle the body's class attribute
+            document.body.classList.toggle('nav-open');
+            toggleNav.innerHTML = document.body.classList.contains('nav-open')
+              ? '&#x2715'
+              : '&#9776;';
+          });
+        };
+      </script>
 
     <footer></footer>
   </body>

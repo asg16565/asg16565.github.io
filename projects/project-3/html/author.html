@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Author | Jekyll & Hyde</title>
+
+    <link rel="stylesheet" href="/projects/project-3/css/styles.css" />
+    <style>
+      p{
+        margin-bottom: 1em;
+      }
+      #content{
+        margin-left: 25px;
+      }
+      #book{
+        margin-left: 0;
+        margin-top: 15px;
+      }
+      .heading{
+        text-align: left;
+      }
+      @media screen and (max-width: 980px) {
+        #title{
+          text-align: center;
+        }
+        #content{
+            margin: 0 auto;
+            align-items: center;
+        }
+        #book{
+          margin: 0 auto;
+          height: 350px;
+          margin-bottom: -20px;
+        }
+        #text{
+          padding: 0;
+        }
+        .heading{
+            text-align: center;
+        }
+      }
+    </style>
+  </head>
+</head>
+<body id="page2">
+    <header>
+      <div id="title">
+        <a href="/projects/project-3/html/index.html"><img id="logo" src="/projects/project-3/images/logo.webp" alt="Logo"></a>
+        <h1>Dr. Jekyll & Mr. Hyde</h1>
+      </div>
+      <button id="toggle-nav">&#9776;</button>
+      <nav id="primary-nav" role="navigation">
+        <div class="inner">
+          <ul>
+            <li><a href="/projects/project-3/html/synopsis.html">Synopsis</a></li>
+            <li><a href="/projects/project-3/html/author.html">Author</a></li>
+            <li><a href="/projects/project-3/html/reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="content">
+        <div>
+          <img id="book" src="/projects/project-3/images/author-portrait.png" alt="Book">
+        </div>
+        <div id="text">
+          <h2 class="heading">About the Author</h2>
+          <p>Robert Louis Stevenson (1850-1894) was a Scottish novelist, poet, essayist, and travel writer known for his literary contributions to the 19th century. Stevenson was born in Edinburgh, Scotland, into a family of lighthouse engineers, and he initially studied engineering at the University of Edinburgh before pursuing a career in writing.</p>
+          <p>He began his writing career as an essayist and travel writer, often contributing to various magazines. His travels provided inspiration for much of his work, including "An Inland Voyage" and "Travels with a Donkey in the Cévennes." However, Stevenson is best known for his adventure and children's literature, particularly "Treasure Island," which introduced iconic characters like Long John Silver and the concept of buried treasure maps.</p>
+          <p>Stevenson's other notable works include "Kidnapped" and "The Strange Case of Dr. Jekyll and Mr. Hyde." His writing often explored themes of duality, the human psyche, and moral ambiguity. Stevenson's contributions to literature, especially in the genres of adventure and mystery, continue to be celebrated today, and his works have had a lasting influence on the development of the novel. Despite health issues throughout his life, Stevenson's literary legacy remains a significant part of the English literary canon.</p>
+        </div>
+      </div>
+      
+      
+    </main>
+    <script>
+      // Perform this after the window has loaded
+      window.onload = () => {
+        // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+        const toggleNav = document.getElementById('toggle-nav');
+        toggleNav.innerHTML = '&#9776;';
+
+        // Tell button to do something on click
+        toggleNav.addEventListener('click', () => {
+          // toggle the body's class attribute
+          document.body.classList.toggle('nav-open');
+          toggleNav.innerHTML = document.body.classList.contains('nav-open')
+            ? '&#x2715'
+            : '&#9776;';
+        });
+      };
+    </script>
+</body>
+</html>

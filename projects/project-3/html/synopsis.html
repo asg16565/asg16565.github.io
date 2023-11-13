@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synopsis | Jekyll & Hyde</title>
+
+    <link rel="stylesheet" href="/projects/project-3/css/styles.css" />
+    <style>
+      
+      #text{
+        margin-left: 50px;
+      }
+      #book{
+        height: 400px;
+        margin-top: 25px;
+        margin-left: 110px;
+      }
+      p{
+        width: 440px;
+      }
+      h2{
+        margin-bottom: 0;
+        margin-top: 25px;
+      }
+      .heading{
+          margin-top: 0;
+        }
+      @media screen and (max-width: 980px) {
+        
+        .container{
+          margin: 0 auto;
+        }
+        #book{
+          margin: 0;
+          height: 300px;
+        }
+        #text{
+          padding: 0;
+        }
+        h2{
+          text-align: center;
+          margin-top: 10px;
+        }
+        h3{
+          text-align: center;
+        }
+        .heading{
+          text-align: center;
+          
+          margin-top: -20px;
+        }
+      }
+    </style>
+  </head>
+</head>
+<body id="page1">
+    <header>
+      <div id="title">
+        <a href="/projects/project-3/html/index.html"><img id="logo" src="/projects/project-3/images/logo.webp" alt="Logo"></a>
+        <h1>Dr. Jekyll & Mr. Hyde</h1>
+      </div>
+      <button id="toggle-nav">&#9776;</button>
+      <nav id="primary-nav" role="navigation">
+        <div class="inner">
+          <ul>
+            <li><a href="/projects/project-3/html/synopsis.html">Synopsis</a></li>
+            <li><a href="/projects/project-3/html/author.html">Author</a></li>
+            <li><a href="/projects/project-3/html/reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="content">
+        <div class="container">
+          <img id="book" src="/projects/project-3/images/book.png" alt="Book">
+          
+        </div>
+        <div id="text">
+          <h2 class="heading">Plot</h2>
+          <p>"The Strange Case of Dr. Jekyll and Mr. Hyde" is a timeless classic by Robert Louis Stevenson that delves into the duality of human nature. In the heart of Victorian London, Dr. Henry Jekyll, a respected and virtuous scientist, becomes consumed by a dark and sinister alter ego named Mr. Hyde. As Hyde's malevolent actions escalate, a web of mystery, intrigue, and moral conflict unfolds. This gripping novella explores the eternal struggle between good and evil, the consequences of unchecked desires, and the very essence of humanity itself. Stevenson's tale is a thought-provoking journey that continues to captivate readers with its exploration of the inner demons we all hide within.</p>
+        </div>
+      </div>
+      
+      <h2>Characters</h2>
+      <div id="character-list">
+        <div class="profile">
+          <img class="portrait" src="/projects/project-3/images/jekyll.png" alt="Dr. Jekyll">
+          <div class="character">
+            <h3>Dr. Henry Jekyll</h3>
+            <p>Dr. Jekyll is a well-respected and brilliant scientist who is tormented by his dual nature, leading him to experiment in dark sciences and create the malevolent alter ego, known as Mr. Hyde.</p>  
+          </div>
+        </div>
+        <div class="profile">
+          <img class="portrait" src="/projects/project-3/images/hyde.png" alt="Mr. Hyde">
+          <div class="character">
+            <h3>Mr. Edward Hyde</h3>
+            <p>Mr. Hyde is the dark and sinister counterpart to Dr. Jekyll, characterized by his cruel and immoral behavior, and his unsettling presence in the story sparks fear and curiosity as Mr. Hyde.</p>  
+          </div>
+        </div>
+        <div class="profile">
+          <img class="portrait" src="/projects/project-3/images/utterson.png" alt="Mr. Utterson">
+          <div class="character">
+            <h3>Mr. Gabriel John Utterson</h3>
+            <p>Mr. Utterson is a highly principled and cautious lawyer, who is a close friend of Dr. Jekyll and becomes deeply concerned when he investigates the strange occurrences involving Mr. Hyde.</p>
+          </div>
+        </div>
+        <div class="profile">
+          <img class="portrait" src="/projects/project-3/images/lanyon.png" alt="Dr. Lanyon">
+          <div class="character">
+            <h3>Dr. Hastie Lanyon</h3>
+            <p>Dr. Lanyon is an old friend and colleague of Dr. Jekyll, a rational and conventional man who becomes entangled in the unfolding mystery as he witnesses the shocking transformation of his once-respected friend.</p>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    <script>
+      // Perform this after the window has loaded
+      window.onload = () => {
+        // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+        const toggleNav = document.getElementById('toggle-nav');
+        toggleNav.innerHTML = '&#9776;';
+
+        // Tell button to do something on click
+        toggleNav.addEventListener('click', () => {
+          // toggle the body's class attribute
+          document.body.classList.toggle('nav-open');
+          toggleNav.innerHTML = document.body.classList.contains('nav-open')
+            ? '&#x2715'
+            : '&#9776;';
+        });
+      };
+    </script>
+</body>
+</html>

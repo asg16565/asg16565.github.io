@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews | Jekyll & Hyde</title>
+
+    <link rel="stylesheet" href="/projects/project-3/css/styles.css" />
+    <style>
+      p{
+        margin-bottom: 1em;
+      }
+      #content{
+        margin-left: 25px;
+      }
+      #text {
+        margin: 0 auto;
+      }
+      h2{
+        margin-top: 25px;
+      }
+      @media screen and (max-width: 980px) {
+        p{
+            width: 400px;
+        }
+        
+        .review{
+            margin-right: 25px;
+        }
+      }
+    </style>
+  </head>
+</head>
+<body id="page3">
+    <header>
+      <div id="title">
+        <a href="/projects/project-3/html/index.html"><img id="logo" src="/projects/project-3/images/logo.webp" alt="Logo"></a>
+        <h1>Dr. Jekyll & Mr. Hyde</h1>
+      </div>
+      <button id="toggle-nav">&#9776;</button>
+      <nav id="primary-nav" role="navigation">
+        <div class="inner">
+          <ul>
+            <li><a href="/projects/project-3/html/synopsis.html">Synopsis</a></li>
+            <li><a href="/projects/project-3/html/author.html">Author</a></li>
+            <li><a href="/projects/project-3/html/reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div id="content">
+        <div id="text">
+          <h2>Reviews</h2>
+            <div class="review">
+                <h3>"A Compelling Tale of Mystery and Intrigue"</h3>
+                <p>by Larry Cumberland</p>
+                <p>Robert Louis Stevenson's 'The Strange Case of Dr. Jekyll and Mr. Hyde' is a gripping novella that expertly weaves a compelling mystery. The plot unfolds with a sense of foreboding and unease as Dr. Jekyll's transformation into the sinister Mr. Hyde remains shrouded in mystery. Stevenson's narrative skill keeps readers on the edge of their seats, eager to unravel the enigma that lies at the heart of the story. The gradual revelation of secrets and the relentless pursuit of the truth make this novella a page-turner from start to finish.</p>
+                <p>Set against the backdrop of Victorian London, the gaslit streets and foggy atmosphere contribute to the eerie ambiance of the tale. The unfolding mystery engages the reader's curiosity and sense of intrigue, making this classic a timeless exploration of the dual nature of humanity. Stevenson's plot is not only captivating but also thought-provoking, leaving readers pondering the boundaries between good and evil.</p>
+            </div>
+            <div class="review">
+                <h3>“Complex Characters and Motivations"</h3>
+                <p>by Robert Thompson</p>
+                <p>In 'The Strange Case of Dr. Jekyll and Mr. Hyde,' Robert Louis Stevenson presents a cast of characters with complex motivations that drive the narrative. The character of Dr. Jekyll, a brilliant scientist, grapples with inner turmoil and a desire to separate his virtuous and sinister sides. Stevenson masterfully portrays the motivations behind this struggle, making readers empathize with Jekyll's yearning for freedom from societal constraints and his darker desires.</p>
+                <p>Mr. Utterson, Jekyll's close friend and a lawyer, plays a pivotal role in the novella. His unwavering commitment to uncovering the truth stems from genuine concern for Jekyll, showcasing the power of friendship and moral conviction. The intricate web of character motivations enriches the storytelling, allowing readers to connect with and understand the choices and dilemmas faced by the characters.</p>
+            </div>
+            <div class="review">
+                <h3> "A Profound Exploration of Timeless Themes"</h3>
+                <p>by Archibald Aspen</p>
+                <p>'The Strange Case of Dr. Jekyll and Mr. Hyde' is more than a mystery; it's a profound exploration of enduring themes. The novella delves deep into the duality of human nature, the ongoing battle between good and evil within each individual, and the consequences of unchecked desires. Robert Louis Stevenson's work compels readers to confront their own inner demons and reflect on the implications of their choices, making it a thought-provoking and timeless masterpiece.</p>
+                <p>Themes of moral ambiguity, the human capacity for transformation and redemption, and the exploration of societal constraints are central to the story. The characters' motivations and actions serve as a mirror through which readers can examine their own struggles and ethical decisions. Stevenson's work challenges us to consider the complexities of human nature and the repercussions of our actions, making it a literary classic with profound and lasting relevance.</p>
+            </div>
+        </div>
+      </div>
+      
+      
+    </main>
+    <script>
+      // Perform this after the window has loaded
+      window.onload = () => {
+        // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+        const toggleNav = document.getElementById('toggle-nav');
+        toggleNav.innerHTML = '&#9776;';
+
+        // Tell button to do something on click
+        toggleNav.addEventListener('click', () => {
+          // toggle the body's class attribute
+          document.body.classList.toggle('nav-open');
+          toggleNav.innerHTML = document.body.classList.contains('nav-open')
+            ? '&#x2715'
+            : '&#9776;';
+        });
+      };
+    </script>
+</body>
+</html>

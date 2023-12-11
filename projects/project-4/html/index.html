@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brews & Bonds</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="/projects/project-4/images/favicon.svg"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/projects/project-4/images/favicon.svg"
+    />
+
+    <link rel="stylesheet" href="/projects/project-4/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="/projects/project-4/html/index.html"
+        ><img
+          id="header-logo"
+          src="/projects/project-4/images/logo.svg"
+          alt="logo"
+      /></a>
+      <button id="toggle-nav">&#9776;</button>
+      <nav id="primary-nav" role="navigation">
+        <div class="color-bars">
+          <div class="block1"></div>
+          <div class="block2"></div>
+          <div class="block3"></div>
+        </div>
+        <div class="inner">
+            <ul>
+                <li><a href="/projects/project-4/html/menu.html">Menu</a></li>
+                <li><a href="/projects/project-4/html/events.html">Events</a></li>
+                <li><a href="/projects/project-4/html/about.html">About</a></li>
+                <li><a href="/projects/project-4/html/contact.html">Contact</a></li>
+              </ul>
+        </div>
+      </nav>
+    </header>
+    <div id="hero-home" class="hero">
+      <div id="tagline">
+        <h1 id="tagline-Part1">Love</h1>
+        <p id="tagline-Part2">in every cup</p>
+      </div>
+    </div>
+    <main>
+      <p>
+        Welcome to Brews & Bonds, where every cup tells a story and every sip
+        creates a connection. Nestled in the heart of our community, we strive
+        to be more than just a coffee shop; we're a place where friendships
+        flourish and conversations flow as smoothly as our freshly brewed
+        coffee. Our passion for quality beans and artisanal brewing methods
+        ensures that each cup is a masterpiece, crafted with care and expertise.
+        Whether you're a coffee connoisseur or a casual sipper, our cozy
+        ambiance invites you to unwind, recharge, and build lasting bonds over a
+        steaming mug of your favorite blend. Join us at Brews & Bonds, where
+        great coffee and meaningful connections go hand in hand.
+      </p>
+      <a class="button-link" href="/projects/project-4/html/menu.html"
+        >View Menu</a
+      >
+    </main>
+
+    <footer>
+      <div id="hours-container">
+        <div id="hours">
+          <h3 style="text-align: center">Business Hours</h3>
+          <div class="equal-columns">
+            <ul class="column-left">
+              <li>Monday</li>
+              <li>Tuesday</li>
+              <li>Wednesday</li>
+              <li>Thursday</li>
+              <li>Friday</li>
+              <li>Saturday</li>
+              <li>Sunday</li>
+            </ul>
+            <ul class="column-right">
+              <li>8am-10pm</li>
+              <li>8am-10pm</li>
+              <li>8am-10pm</li>
+              <li>8am-10pm</li>
+              <li>8am-10pm</li>
+              <li>8am-10pm</li>
+              <li>10am-10pm</li>
+            </ul>
+          </div>
+        </div>
+        <div class="color-bars">
+          <div class="block1"></div>
+          <div class="block2"></div>
+          <div class="block3"></div>
+        </div>
+      </div>
+      <div id="contact-info">
+        <div style="text-align: right">
+          <p>678 Bean Road, Lancaster, PA 17601</p>
+          <p>info@brewsandbonds.com</p>
+          <p>(717) 122-3334</p>
+          <p>© Brews & Bonds</p>
+        </div>
+      </div>
+    </footer>
+    <script>
+        // Perform this after the window has loaded
+        window.onload = () => {
+          // First, tell JavaScript to remember which DOM element (in this case, a button) to reference (by id)
+          const toggleNav = document.getElementById('toggle-nav');
+          toggleNav.innerHTML = '&#9776;';
+  
+          // Tell button to do something on click
+          toggleNav.addEventListener('click', () => {
+            // toggle the body's class attribute
+            document.body.classList.toggle('nav-open');
+            toggleNav.innerHTML = document.body.classList.contains('nav-open')
+              ? '&#x2715'
+              : '&#9776;';
+          });
+        };
+      </script>
+  </body>
+</html>
